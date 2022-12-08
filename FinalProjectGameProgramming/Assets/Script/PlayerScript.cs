@@ -44,6 +44,8 @@ public class PlayerScript : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
     }
 
+    
+
 
     private void Flip() {
         Vector3 currentScale = gameObject.transform.localScale;
