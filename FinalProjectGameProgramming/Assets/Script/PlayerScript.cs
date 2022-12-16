@@ -1,8 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+[Serializable] 
+public enum TypePlayer{
+    DRAGON, 
+    WIZARD 
+}
 
 public class PlayerScript : MonoBehaviour
 {
@@ -15,6 +22,8 @@ public class PlayerScript : MonoBehaviour
     float force = 15f ;
     Animator animator;
     bool canJump;
+
+    public TypePlayer typePlayer;
 
 
     void Start()
@@ -62,7 +71,10 @@ public class PlayerScript : MonoBehaviour
         }
 
         if (other.gameObject.tag.Equals("Water")) {
-            Destroy(gameObject, 2f);
+            if (typePlayer == TypePlayer.DRAGON) {
+                Destroy(gameObject, 2f);
+            }
+            
         }
     }
 

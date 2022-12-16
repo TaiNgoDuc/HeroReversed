@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public AudioClip audioStartbtn;
     public AudioClip audioSettingbtn;
     public AudioSource sourceAudio;
+    public TypePlayer currentPlayer;
+    public PlayerScript player;
 
     public void playSoundStartbtn() {
         sourceAudio.clip = audioStartbtn;
