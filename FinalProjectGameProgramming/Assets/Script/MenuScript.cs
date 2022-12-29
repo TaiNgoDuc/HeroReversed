@@ -9,8 +9,10 @@ public class MenuScript : MonoBehaviour
 
     [SerializeField] GameObject settingPanel;
     [SerializeField] GameObject mainMenuPanel;
+    [SerializeField] GameObject selectPlayerPanel;
     [SerializeField] Button startButton;
     [SerializeField] Button settingButton;
+    [SerializeField] Button backButton;
     [SerializeField] Slider musicControl;
     public static GameManager Instance;
 
@@ -35,31 +37,39 @@ public class MenuScript : MonoBehaviour
     {
         startButton.onClick.AddListener(OnClickStart);
         settingButton.onClick.AddListener(OnClickSetting);
-        // quit.onClick.AddListener(OnClickQuit);
-        
+        backButton.onClick.AddListener(OnClickBack);
     }
 
     void Start()
     {
         mainMenuPanel.SetActive(true);
         settingPanel.SetActive(false);
+        selectPlayerPanel.SetActive(false);
 
-        // if(!PlayerPrefs.HasKey("changed")) {
-        //     PlayerPrefs.SetFloat("changed", 1);
-        // } else {
-        //     loadChangedVolume();
-        // }
+
+        if(!PlayerPrefs.HasKey("changed")) {
+            PlayerPrefs.SetFloat("changed", 1);
+        } else {
+            loadChangedVolume();
+        }
         
     }
 
     public void OnClickStart() {
-        // GameManager.Instance.playSoundStartbtn();
+        mainMenuPanel.SetActive(false);
+        selectPlayerPanel.SetActive(true);
+        GameManager.Instance.playSoundStartbtn();
     }
 
     public void OnClickSetting() {
         mainMenuPanel.SetActive(false);
         settingPanel.SetActive(true);
         GameManager.Instance.playSoundSettingbtn();
+    }
+
+    public void OnClickBack() {
+        mainMenuPanel.SetActive(true);
+        settingPanel.SetActive(false);
     }
 
     // Update is called once per frame

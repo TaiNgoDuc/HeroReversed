@@ -16,6 +16,10 @@ TagManager:
   - MainMenuPanel
   - walltoflip
   - enemy
+  - SelectPlayerPanel
+  - fireball
+  - BackButton
+  - AttackZone
   layers:
   - Default
   - TransparentFX

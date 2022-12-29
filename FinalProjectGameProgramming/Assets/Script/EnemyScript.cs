@@ -10,6 +10,8 @@ public class EnemyScript : MonoBehaviour
     private Vector2 walkofenemy = Vector2.right;
     Rigidbody2D rb;
     private bool isRight = true;
+    int count = 0;
+    bool canRun;
 
 
     void Start()
@@ -34,6 +36,20 @@ public class EnemyScript : MonoBehaviour
         else if (other.gameObject.tag.Equals("walltoflip") && walkofenemy==Vector2.left) {
             walkofenemy = Vector2.right;
             Flip();
+        } 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.tag.Equals("AttackZone")) {
+            // for boss only
+            count++;
+            if (count == 5) {
+                Destroy(gameObject);
+                Debug.Log("da tieu diet dich");
+            }
+        }
+        if (other.gameObject.tag.Equals("fireball") ) {
+            Destroy(gameObject);
         }
     }
 

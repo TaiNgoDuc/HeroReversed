@@ -48,13 +48,10 @@ public class PlayerScript : MonoBehaviour
     }
 
     IEnumerator FailGame() {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0);
 
         SceneManager.LoadScene("GameOverScene");
     }
-
-    
-
 
     private void Flip() {
         Vector3 currentScale = gameObject.transform.localScale;
@@ -72,9 +69,26 @@ public class PlayerScript : MonoBehaviour
 
         if (other.gameObject.tag.Equals("Water")) {
             if (typePlayer == TypePlayer.DRAGON) {
-                Destroy(gameObject, 2f);
+                StartCoroutine(FailGame());
             }
-            
+        }
+
+        if (other.gameObject.tag.Equals("Lava")) {
+            if (typePlayer == TypePlayer.WIZARD) {
+                StartCoroutine(FailGame());
+            }
+        }
+
+        if (other.gameObject.tag.Equals("enemy")) {
+            if (typePlayer == TypePlayer.WIZARD) {
+                StartCoroutine(FailGame());
+            }
+        }
+
+        if (other.gameObject.tag.Equals("enemy")) {
+            if (typePlayer == TypePlayer.DRAGON) {
+                StartCoroutine(FailGame());
+            }
         }
     }
 
@@ -109,6 +123,7 @@ public class PlayerScript : MonoBehaviour
         var horizontalVal = Input.GetAxis("Horizontal");
         animator.SetBool("Jump", false);
         animator.SetBool("Speed", false);
+        animator.SetBool("Shoot", false);
         if (horizontalVal != 0) {
             rb.velocity = new Vector2(horizontalVal * speed, rb.velocity.y);
             animator.SetBool("Speed", true);
@@ -121,6 +136,11 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Player can jump");
             rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
 
+        }
+
+        if (Input.GetKeyDown(KeyCode.F)) {
+            animator.SetBool("Shoot", true);
+            Debug.Log("Player can shoot");
         }
     }
 

@@ -169,7 +169,7 @@ Transform:
   - {fileID: 536330306}
   - {fileID: 1764773082}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439097989
 GameObject:
@@ -628,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6798612176710817889, guid: e859ee6e13e88454c8202c3291d19984, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6798612176710817889, guid: e859ee6e13e88454c8202c3291d19984, type: 3}
       propertyPath: m_LocalScale.x
@@ -1767,7 +1767,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1315663027
 GameObject:
@@ -3013,7 +3013,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1676703032
 PolygonCollider2D:
@@ -3192,7 +3192,7 @@ GameObject:
   - component: {fileID: 1764773085}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: walltoflip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3955,7 +3955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6798612176710817889, guid: e859ee6e13e88454c8202c3291d19984, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6798612176710817889, guid: e859ee6e13e88454c8202c3291d19984, type: 3}
       propertyPath: m_LocalScale.x
@@ -4020,7 +4020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6593223080522922259, guid: 6c942ed53af6ee643a34ae645255180a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6593223080522922259, guid: 6c942ed53af6ee643a34ae645255180a, type: 3}
       propertyPath: m_LocalScale.x
