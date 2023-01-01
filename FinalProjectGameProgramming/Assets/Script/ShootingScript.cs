@@ -14,7 +14,7 @@ public class ShootingScript : MonoBehaviour
         rb.velocity = new Vector2(moveSpeed.x * transform.localScale.x, moveSpeed.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("enemy")) {
             Destroy(gameObject);
         }
@@ -24,6 +24,9 @@ public class ShootingScript : MonoBehaviour
         }
 
         if (other.gameObject.tag.Equals("Ground")) {
+            Destroy(gameObject);
+        }
+        if (other.gameObject.tag.Equals("Boss")) {
             Destroy(gameObject);
         }
     }

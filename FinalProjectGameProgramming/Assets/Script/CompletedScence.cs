@@ -4,17 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOverScript : MonoBehaviour
+public class CompletedScence : MonoBehaviour
 {
 
-    [SerializeField] Button startAgainButton;
+    [SerializeField] Button mainMenuButton;
 
-    // Start is called before the first frame update
     void Awake()
     {
-        startAgainButton.onClick.AddListener(OnClickStartAgain);
+        mainMenuButton.onClick.AddListener(OnClickMainMenu);
     }
 
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -26,8 +26,7 @@ public class GameOverScript : MonoBehaviour
         
     }
 
-    public void OnClickStartAgain() {
+    public void OnClickMainMenu() {
         SceneManager.LoadScene("MenuScenes");
     }
-
 }

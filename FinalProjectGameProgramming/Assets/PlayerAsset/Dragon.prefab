@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 603479664}
   - component: {fileID: 603479665}
   - component: {fileID: 7497204178104819308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Dragon
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -227,7 +227,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1665270229300346262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

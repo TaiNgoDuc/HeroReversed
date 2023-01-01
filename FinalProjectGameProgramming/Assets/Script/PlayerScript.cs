@@ -53,6 +53,12 @@ public class PlayerScript : MonoBehaviour
         SceneManager.LoadScene("GameOverScene");
     }
 
+    IEnumerator FinishGame() {
+        yield return new WaitForSeconds(0);
+
+        SceneManager.LoadScene("GameCompleteScene");
+    }
+
     private void Flip() {
         Vector3 currentScale = gameObject.transform.localScale;
         currentScale.x *= -1;
@@ -62,7 +68,6 @@ public class PlayerScript : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        Debug.Log("Collision with " + other.gameObject.name);
         if (other.gameObject.tag.Equals("Ground")) {
             canJump = true;
         }
@@ -107,6 +112,10 @@ public class PlayerScript : MonoBehaviour
         if (other.gameObject.tag.Equals("Entrance2")) {
             StartCoroutine(LoadLevel3());
         }
+
+        if (other.gameObject.tag.Equals("Final")) {
+            StartCoroutine(FinishGame());
+        }
     }
 
     // Update is called once per frame
@@ -127,20 +136,17 @@ public class PlayerScript : MonoBehaviour
         if (horizontalVal != 0) {
             rb.velocity = new Vector2(horizontalVal * speed, rb.velocity.y);
             animator.SetBool("Speed", true);
-            Debug.Log("player can run");
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             animator.SetBool("Jump", true);
-            Debug.Log("Player can jump");
             rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
 
         }
 
         if (Input.GetKeyDown(KeyCode.F)) {
             animator.SetBool("Shoot", true);
-            Debug.Log("Player can shoot");
         }
     }
 

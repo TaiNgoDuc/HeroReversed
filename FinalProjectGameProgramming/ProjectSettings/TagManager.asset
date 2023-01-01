@@ -20,6 +20,8 @@ TagManager:
   - fireball
   - BackButton
   - AttackZone
+  - MainMenuButton
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -29,7 +31,7 @@ TagManager:
   - UI
   - player
   - enemy
-  - 
+  - boss
   - 
   - 
   - 
