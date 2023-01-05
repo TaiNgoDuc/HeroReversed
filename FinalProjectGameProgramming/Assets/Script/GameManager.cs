@@ -9,6 +9,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public AudioClip audioStartbtn;
     public AudioClip audioSettingbtn;
+    public AudioClip audioStartAgainbtn;
+    public AudioClip audioMainMenubtn;
+    public AudioClip audioControllKeybtn;
+    public AudioClip audioShootSound;
     public AudioSource sourceAudio;
     public TypePlayer currentPlayer;
     public PlayerScript player;
@@ -23,6 +27,25 @@ public class GameManager : MonoBehaviour
         sourceAudio.Play();
     }
 
+    public void playSoundStartAgainbtn() {
+        sourceAudio.clip = audioStartAgainbtn;
+        sourceAudio.Play();
+    }
+
+    public void playSoundShoot() {
+        sourceAudio.clip = audioShootSound;
+        sourceAudio.Play();
+    }
+
+    public void playSoundMainMenu() {
+        sourceAudio.clip = audioMainMenubtn;
+        sourceAudio.Play();
+    }
+
+    public void playSoundControllKey() {
+        sourceAudio.clip = audioControllKeybtn;
+        sourceAudio.Play();
+    }
 
     public void Awake() {
         if (!Instance) {

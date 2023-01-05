@@ -6,18 +6,16 @@ public class Level1Script : MonoBehaviour
 {
 
     [SerializeField] PlayerScript dragonPrefab;
-    [SerializeField] PlayerScript wizardPrefab;
+    [SerializeField] PlayerScript greenDragonPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
         if (GameManager.Instance.currentPlayer == TypePlayer.DRAGON ) {
             GameManager.Instance.player = Instantiate(dragonPrefab,new Vector3 (-8.28f, -1.65f, 0f), Quaternion.identity); 
-            // GameManager.Instance.player = gameObject.GetComponent<PlayerScript>();
 
         } else{
-            GameManager.Instance.player = Instantiate(wizardPrefab,new Vector3 (-8.28f, -1.65f, 0f), Quaternion.identity);
-            // GameManager.Instance.player = gameObject.GetComponent<PlayerScript>();
+            GameManager.Instance.player = Instantiate(greenDragonPrefab,new Vector3 (-8.28f, -1.65f, 0f), Quaternion.identity);
         }
     }
 

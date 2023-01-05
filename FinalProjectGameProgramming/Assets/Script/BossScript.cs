@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class BossScript : MonoBehaviour
 {
@@ -29,7 +32,6 @@ public class BossScript : MonoBehaviour
         isRight = !isRight;
     }
 
-
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.tag.Equals("walltoflip") && walkofenemy==Vector2.right) {
             walkofenemy = Vector2.left;
@@ -39,35 +41,16 @@ public class BossScript : MonoBehaviour
             walkofenemy = Vector2.right;
             Flip();
         } 
+    }
 
-        if (other.gameObject.tag.Equals("AttackZone")) {
-            count++;
-            if (count == 5) {
-                Destroy(gameObject);
-            }
-        }
+    private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("fireball") ) {
             count++;
-            if(count == 5) {
+            if(count == 10) {
                 Destroy(gameObject);
             }
         }
     }
-
-    // private void OnTriggerEnter2D(Collider2D other) {
-    //     if (other.gameObject.tag.Equals("AttackZone")) {
-    //         count++;
-    //         if (count == 5) {
-    //             Destroy(gameObject);
-    //         }
-    //     }
-    //     if (other.gameObject.tag.Equals("fireball") ) {
-    //         count++;
-    //         if(count == 5) {
-    //             Destroy(gameObject);
-    //         }
-    //     }
-    // }
 
     // Update is called once per frame
     void Update()

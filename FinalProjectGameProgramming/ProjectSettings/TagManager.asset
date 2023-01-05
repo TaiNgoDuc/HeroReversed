@@ -22,6 +22,9 @@ TagManager:
   - AttackZone
   - MainMenuButton
   - Boss
+  - AttackZone1
+  - AttackZone2
+  - ControllKeyPanel
   layers:
   - Default
   - TransparentFX

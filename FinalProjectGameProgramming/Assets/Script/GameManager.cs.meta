@@ -3,7 +3,14 @@ guid: 15a0b97c2f295a54cad7eb793828618d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioStartbtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
+  - audioSettingbtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
+  - audioStartAgainbtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
+  - audioMainMenubtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
+  - audioShootSound: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
+  - sourceAudio: {instanceID: 0}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -10,9 +10,11 @@ public class MenuScript : MonoBehaviour
     [SerializeField] GameObject settingPanel;
     [SerializeField] GameObject mainMenuPanel;
     [SerializeField] GameObject selectPlayerPanel;
+    [SerializeField] GameObject controllKeyPanel;
     [SerializeField] Button startButton;
     [SerializeField] Button settingButton;
     [SerializeField] Button backButton;
+    [SerializeField] Button controllKeyButton;
     [SerializeField] Slider musicControl;
     public static GameManager Instance;
 
@@ -38,6 +40,7 @@ public class MenuScript : MonoBehaviour
         startButton.onClick.AddListener(OnClickStart);
         settingButton.onClick.AddListener(OnClickSetting);
         backButton.onClick.AddListener(OnClickBack);
+        controllKeyButton.onClick.AddListener(onClickControllKey);
     }
 
     void Start()
@@ -45,6 +48,7 @@ public class MenuScript : MonoBehaviour
         mainMenuPanel.SetActive(true);
         settingPanel.SetActive(false);
         selectPlayerPanel.SetActive(false);
+        controllKeyPanel.SetActive(false);
 
 
         if(!PlayerPrefs.HasKey("changed")) {
@@ -70,6 +74,14 @@ public class MenuScript : MonoBehaviour
     public void OnClickBack() {
         mainMenuPanel.SetActive(true);
         settingPanel.SetActive(false);
+        selectPlayerPanel.SetActive(false);
+        controllKeyPanel.SetActive(false);
+    }
+
+    public void onClickControllKey() {
+        mainMenuPanel.SetActive(false);
+        controllKeyPanel.SetActive(true);
+        GameManager.Instance.playSoundSettingbtn();
     }
 
     // Update is called once per frame

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [Serializable] 
 public enum TypePlayer{
     DRAGON, 
-    WIZARD 
+    GREENDRAGON 
 }
 
 public class PlayerScript : MonoBehaviour
@@ -76,16 +76,25 @@ public class PlayerScript : MonoBehaviour
             if (typePlayer == TypePlayer.DRAGON) {
                 StartCoroutine(FailGame());
             }
+
+            if (typePlayer == TypePlayer.GREENDRAGON) {
+                canJump = true;
+            }
         }
 
         if (other.gameObject.tag.Equals("Lava")) {
-            if (typePlayer == TypePlayer.WIZARD) {
+            if (typePlayer == TypePlayer.GREENDRAGON) {
                 StartCoroutine(FailGame());
+            }
+
+            if (typePlayer == TypePlayer.DRAGON) {
+                canJump = true;
             }
         }
 
         if (other.gameObject.tag.Equals("enemy")) {
-            if (typePlayer == TypePlayer.WIZARD) {
+            if (typePlayer == TypePlayer.GREENDRAGON) {
+                Debug.Log("Chet vi cham quai!");
                 StartCoroutine(FailGame());
             }
         }
@@ -95,6 +104,7 @@ public class PlayerScript : MonoBehaviour
                 StartCoroutine(FailGame());
             }
         }
+
     }
 
     private void OnCollisionExit2D(Collision2D other) {
@@ -115,6 +125,14 @@ public class PlayerScript : MonoBehaviour
 
         if (other.gameObject.tag.Equals("Final")) {
             StartCoroutine(FinishGame());
+        }
+
+        if (other.gameObject.tag.Equals("AttackZone1") ) {
+            StartCoroutine(FailGame());
+        }
+
+        if (other.gameObject.tag.Equals("AttackZone2") ) {
+            StartCoroutine(FailGame());
         }
     }
 
@@ -147,6 +165,7 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F)) {
             animator.SetBool("Shoot", true);
+            GameManager.Instance.playSoundShoot();
         }
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2446089465434373851}
   - component: {fileID: 8502877838328672179}
   - component: {fileID: 3554984534323141582}
-  - component: {fileID: 4210947937828182172}
+  - component: {fileID: -723799252380208198}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: fireball
@@ -97,7 +97,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -145,7 +145,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &4210947937828182172
+--- !u!114 &-723799252380208198
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -8,6 +8,13 @@ public class GameOverScript : MonoBehaviour
 {
 
     [SerializeField] Button startAgainButton;
+    public static GameManager Instance;
+
+    IEnumerator LoadMainMenu() {
+        yield return new WaitForSeconds(1);
+
+        SceneManager.LoadScene("MenuScenes");
+    }
 
     // Start is called before the first frame update
     void Awake()
@@ -27,7 +34,8 @@ public class GameOverScript : MonoBehaviour
     }
 
     public void OnClickStartAgain() {
-        SceneManager.LoadScene("MenuScenes");
+        GameManager.Instance.playSoundStartAgainbtn();
+        StartCoroutine(LoadMainMenu());
     }
 
 }

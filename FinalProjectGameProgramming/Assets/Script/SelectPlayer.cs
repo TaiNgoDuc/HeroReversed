@@ -9,15 +9,15 @@ public class SelectPlayer : MonoBehaviour
 {
 
     [SerializeField] Button Dragon;
-    [SerializeField] Button Wizard;
+    [SerializeField] Button GreenDragon;
 
     public void OnClickDragon() { 
         GameManager.Instance.currentPlayer = TypePlayer.DRAGON;
         SceneManager.LoadScene("Level1");
     }
 
-    public void OnClickWizard() { 
-        GameManager.Instance.currentPlayer = TypePlayer.WIZARD;
+    public void OnClickGreenDragon() { 
+        GameManager.Instance.currentPlayer = TypePlayer.GREENDRAGON;
         SceneManager.LoadScene("Level1");
     }
 
@@ -25,7 +25,7 @@ public class SelectPlayer : MonoBehaviour
     void Start()
     {
         Dragon.onClick.AddListener(OnClickDragon);
-        Wizard.onClick.AddListener(OnClickWizard);
+        GreenDragon.onClick.AddListener(OnClickGreenDragon);
     }
 
     // Update is called once per frame
