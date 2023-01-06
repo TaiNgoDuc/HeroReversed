@@ -392,7 +392,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Controll Key
+  m_text: how to play
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 23a1ce9d7f94302498f265d5cea42b3f, type: 2}
   m_sharedMaterial: {fileID: 802683976361182237, guid: 23a1ce9d7f94302498f265d5cea42b3f, type: 2}

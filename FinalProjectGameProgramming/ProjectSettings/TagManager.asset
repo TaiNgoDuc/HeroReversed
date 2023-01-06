@@ -25,6 +25,8 @@ TagManager:
   - AttackZone1
   - AttackZone2
   - ControllKeyPanel
+  - ExitButton
+  - ResumeButton
   layers:
   - Default
   - TransparentFX

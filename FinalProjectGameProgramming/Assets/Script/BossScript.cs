@@ -46,7 +46,7 @@ public class BossScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("fireball") ) {
             count++;
-            if(count == 10) {
+            if(count == 40) {
                 Destroy(gameObject);
             }
         }

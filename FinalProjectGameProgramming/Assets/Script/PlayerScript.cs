@@ -36,13 +36,13 @@ public class PlayerScript : MonoBehaviour
     }
 
     IEnumerator LoadLevel2() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
 
         SceneManager.LoadScene("Level2");
     }
 
     IEnumerator LoadLevel3() {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0);
 
         SceneManager.LoadScene("Level3");
     }
