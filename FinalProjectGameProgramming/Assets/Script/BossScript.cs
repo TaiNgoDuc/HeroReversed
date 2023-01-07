@@ -61,7 +61,7 @@ public class BossScript : MonoBehaviour
         if (bossDetectZone.detected == true) {
             
             if (!oneTime) {
-                Debug.Log(bossDetectZone.getDetectZone);
+                // Debug.Log(bossDetectZone.getDetectZone);
                 oneTime = true;
                 animator.SetBool("Run", false);
 

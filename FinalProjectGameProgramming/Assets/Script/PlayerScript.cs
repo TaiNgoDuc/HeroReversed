@@ -94,7 +94,6 @@ public class PlayerScript : MonoBehaviour
 
         if (other.gameObject.tag.Equals("enemy")) {
             if (typePlayer == TypePlayer.GREENDRAGON) {
-                Debug.Log("Chet vi cham quai!");
                 StartCoroutine(FailGame());
             }
         }
@@ -165,7 +164,6 @@ public class PlayerScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F)) {
             animator.SetBool("Shoot", true);
-            GameManager.Instance.playSoundShoot();
         }
     }
 

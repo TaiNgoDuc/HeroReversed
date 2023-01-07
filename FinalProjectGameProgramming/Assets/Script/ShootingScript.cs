@@ -17,7 +17,6 @@ public class ShootingScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.tag.Equals("enemy")) {
             Destroy(gameObject);
-            Debug.Log("He he ban trung roi");
         }
 
         if (other.gameObject.tag.Equals("walltoflip")) {

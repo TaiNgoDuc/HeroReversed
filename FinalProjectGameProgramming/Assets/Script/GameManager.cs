@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public AudioClip audioStartAgainbtn;
     public AudioClip audioMainMenubtn;
     public AudioClip audioControllKeybtn;
-    public AudioClip audioShootSound;
     public AudioSource sourceAudio;
     public TypePlayer currentPlayer;
     public PlayerScript player;
@@ -29,11 +28,6 @@ public class GameManager : MonoBehaviour
 
     public void playSoundStartAgainbtn() {
         sourceAudio.clip = audioStartAgainbtn;
-        sourceAudio.Play();
-    }
-
-    public void playSoundShoot() {
-        sourceAudio.clip = audioShootSound;
         sourceAudio.Play();
     }
 

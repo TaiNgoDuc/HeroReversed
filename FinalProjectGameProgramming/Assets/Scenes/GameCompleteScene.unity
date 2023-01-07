@@ -427,6 +427,7 @@ MonoBehaviour:
   audioSettingbtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
   audioStartAgainbtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
   audioMainMenubtn: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
+  audioControllKeybtn: {fileID: 0}
   audioShootSound: {fileID: 8300000, guid: 0d1e8ab7eee8c7a498d604d69c3c7362, type: 3}
   sourceAudio: {fileID: 1653976599}
   currentPlayer: 0
@@ -936,7 +937,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
